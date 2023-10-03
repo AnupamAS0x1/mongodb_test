@@ -2,8 +2,6 @@ name: Readability
 
 on:
   pull_request:
-    paths:
-      - "source/sdk/**"
 
 jobs:
   scoreText:
