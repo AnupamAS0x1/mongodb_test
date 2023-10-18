@@ -1,4 +1,4 @@
-name: Upload Docs Artifact
+name: Continuous Integration
 
 on:
   pull_request:
