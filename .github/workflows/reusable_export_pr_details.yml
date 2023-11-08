@@ -1,0 +1,12 @@
+name: Print Name Manually
+
+on:
+    workflow_call:
+
+jobs:
+  print_name_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Custom Name
+        run: echo "Hello, Anupam!"

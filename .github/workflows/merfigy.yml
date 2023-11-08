@@ -1,0 +1,26 @@
+name: Continuous Integration
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  upload-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Create Docs Directory
+        run: mkdir docs
+
+      - name: Add anupams01.txt
+        run: echo "This is the content of anupams01.txt" > docs/anupams01.txt
+
+      - name: Upload Docs as an Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: docs
+          path: docs

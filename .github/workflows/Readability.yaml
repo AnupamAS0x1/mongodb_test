@@ -1,0 +1,38 @@
+name: Readability
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  create-artifact:
+    runs-on: ubuntu-latest
+
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Create Artifact Directory
+        run: mkdir -p scores
+
+      - name: Create Text File
+        run: echo "This is AnupamAs01's text content." > scores/AnupamAs01.txt
+
+      - name: Create Markdown File
+        run: echo "AnupamAs01 was here" > scores/scores.md
+
+      - name: Create Issues File
+        run: touch scores/issues
+
+      - name: Create Zip Archive
+        run: zip -r scores.zip scores
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: scores.zip
+          path: scores.zip
