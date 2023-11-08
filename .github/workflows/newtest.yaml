@@ -1,0 +1,15 @@
+name: Record PR details
+on:
+  pull_request:
+
+jobs:
+  print-name:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Print my name
+        id: print-name
+        run: echo "My name is Anupamas01"
