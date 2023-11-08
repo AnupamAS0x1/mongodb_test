@@ -21,12 +21,6 @@ jobs:
         workflow: $
         workflow_conclusion: ''
         name: missing_license_headers
-    - name: Report missing headers
-      run: ./contrib/scripts/report-license-headers.sh
-      env:
-        GITHUB_TOKEN: $
-        COMMIT_SHA: $
-      shell: bash
   report-clang-format-diff:
     permissions:
       pull-requests: write
